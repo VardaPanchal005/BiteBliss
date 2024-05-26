@@ -21,6 +21,7 @@ import coffee from "./coffee.jpg";
 import logo from "./logo.jpg";
 import profile from "./profile.png";
 import {Link} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 const Practice = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -49,10 +50,30 @@ const Practice = () => {
       behavior: "smooth",
     });
   };
+  const navigate = useNavigate();
+
+  const handlechange = () => {
+    navigate('/pavbhaji');
+  };
+
+  const handletacos = () => {
+    navigate('/tacos');
+  };
+
+  const handlepouncake = () => {
+    navigate('/poundcake');
+  };
+  const handleOnigiri = () => {
+    navigate('/onigiri');
+  };
+  const handlepie = (event) => {
+    event.preventDefault();
+    navigate('/pie');
+  };
 
   return (
     <div className='bg-white'>
-      <nav className='bg-white flex w-full h-20 shadow-lg shadow-gray-300 fixed top-0 z-10'>
+      <nav className='bg-white flex w-full h-20 shadow-lg shadow-gray-300 fixed top-0 z-10 mb-4'>
         <img src={logo} className='rounded-full w-13 h-12 mt-3 ml-2' />
         <h1 className='text-left py-5 pl-3 font-bold text-xl text-red-500'>BiteBliss</h1>
         <div className='flex gap-8 py-5 pr-5 font-bold text-red-500 text-lg ml-auto'>
@@ -73,8 +94,8 @@ const Practice = () => {
     </Link>
   </h2> 
         </div>
-      </nav><br /><br /><br /><br />
-      <div className='flex justify-center'>
+      </nav>
+      <div className='flex justify-center mt-20 p-5'>
         <img src={biryani} alt="Biryani" className="w-64 h-64 object-cover m-2 rounded" />
         <img src={pasta} alt="Pasta" className="w-64 h-64 object-cover m-2 rounded" />
         <img src={pancake} alt="Pancake" className="w-64 h-64 object-cover m-2 rounded" />
@@ -120,19 +141,19 @@ const Practice = () => {
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={pavbhaji} className='w-full h-full rounded object-cover' alt="pav bhaji" />
-            <div className='flex-grow flex items-center font-bold p-2 text-xl text-red-500 justify-center'>Pav Bhaji</div>
+            <div className='flex-grow flex items-center font-bold p-2 text-xl text-red-500 justify-center'><button onClick={handlechange}>Pav Bhaji</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={tacos} className='w-full h-full rounded object-cover' alt="lasagna" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl justify-center'>Tacos</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl justify-center'><button onClick={handletacos}>Tacos</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={cake} className='w-full h-full rounded object-cover' alt="cake" />
-            <div className='flex-grow flex items-center p-2 text-red-500 text-xl font-bold justify-center'>Pound Cake</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 text-xl font-bold justify-center'><button onClick={handlepouncake}>Pound Cake</button></div>
           </div>
         </div>
       </div>
@@ -141,19 +162,19 @@ const Practice = () => {
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={onigiri} className='w-full h-full rounded object-cover' alt="pav bhaji" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Onigiri</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button onClick={handleOnigiri}>Onigiri</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={pie} className='w-full h-full rounded object-cover' alt="lasagna" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Apple pie</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button onClick={handlepie}>Apple pie</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={lasangna} className='w-full h-full rounded object-cover' alt="cake" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Brocht</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button>Brocht</button></div>
           </div>
         </div>
       </div>
@@ -161,19 +182,19 @@ const Practice = () => {
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={sauce} className='w-full h-full rounded object-cover' alt="pav bhaji" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Tzatziki sauce</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button>Brocht</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={salad} className='w-full h-full rounded object-cover' alt="lasagna" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Tteokbokki </div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button>Tteokbokki </button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={cake2} className='w-full h-full rounded object-cover' alt="cake" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Pavlova</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button>Pavlova</button></div>
           </div>
         </div>
       </div>
@@ -181,19 +202,19 @@ const Practice = () => {
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={salad2} className='w-full h-full rounded object-cover' alt="pav bhaji" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Ratatouille</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button>Ratatouille</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={noodles} className='w-full h-full rounded object-cover' alt="lasagna" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Pho</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button>Pho</button></div>
           </div>
         </div>
         <div className='flex-1 border border-gray-400 rounded'>
           <div className='h-full flex flex-col'>
             <img src={coffee} className='w-full h-full rounded object-cover' alt="cake" />
-            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'>Sangria</div>
+            <div className='flex-grow flex items-center p-2 text-red-500 font-bold text-xl  justify-center'><button >Sangria</button></div>
           </div>
         </div>
       </div>
